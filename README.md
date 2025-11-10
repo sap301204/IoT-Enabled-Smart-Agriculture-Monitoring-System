@@ -18,5 +18,8 @@ It provides a Node-RED or Grafana dashboard for visualization, alerts, and decis
 - **Protocols:** MQTT over Wi-Fi  
 - **Deployment:** Local Docker or standalone PC setup  
 
-## 🧩 Folder Structure
-
+## ⚙️ Run Locally
+```bash
+docker compose up -d
+python3 edge/mqtt_bridge.py
+python3 hardware/simulator.py

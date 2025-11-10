@@ -1,0 +1,7 @@
+IoT-Enabled Smart Agriculture Monitoring System
+
+Problem Statement:
+Traditional irrigation systems waste water, energy, and manpower due to lack of real-time monitoring.
+This project builds an IoT-based solution using ESP32 and sensors to monitor soil moisture, temperature,
+humidity, and light intensity. The system automates irrigation through relay-based control and visualizes
+live data via MQTT dashboard — enabling efficient, data-driven farm management.

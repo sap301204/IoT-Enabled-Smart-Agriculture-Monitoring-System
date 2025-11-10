@@ -1,0 +1,9 @@
+IoT-Smart-Agri/
+├── hardware/
+├── edge/
+├── dashboard/
+├── dataset/
+├── analytics/
+├── infra/
+├── docs/
+└── .github/workflows/

@@ -1,25 +1,19 @@
-# 🌾 IoT-Enabled Smart Agriculture Monitoring System
+# IoT-Enabled Smart Agriculture Monitoring System
 
-## 📖 Overview
-This project uses an ESP32 microcontroller with soil, temperature, humidity, and light sensors to monitor farm conditions in real time and automate irrigation via MQTT and relay control.  
-It provides a Node-RED or Grafana dashboard for visualization, alerts, and decision-making — ideal for precision agriculture and IoT training.
+## Overview
+An IoT-based solution using ESP32 and MQTT for monitoring soil, temperature, humidity, and light intensity.
+Automates irrigation via relay and visualizes live data with Node-RED.
 
-## 🚀 Features
-- Real-time environmental monitoring  
-- Automated irrigation control  
-- Node-RED dashboard for data visualization  
-- MQTT-based communication  
-- Optional cloud storage & analytics (ThingSpeak / InfluxDB)  
-- Local deployment using Docker Compose  
-
-## ⚙️ Tech Stack
-- **Hardware:** ESP32, DHT22, Soil Moisture Sensor, LDR, Relay Module  
-- **Software:** Arduino IDE / PlatformIO, Python, Node-RED, Mosquitto MQTT, Grafana  
-- **Protocols:** MQTT over Wi-Fi  
-- **Deployment:** Local Docker or standalone PC setup  
-
-## ⚙️ Run Locally
+## Run Locally
 ```bash
 docker compose up -d
 python3 edge/mqtt_bridge.py
 python3 hardware/simulator.py
+```
+Access Node-RED Dashboard at http://localhost:1880/ui
+
+## Tech Stack
+ESP32, DHT22, MQTT, Node-RED, Grafana, Python
+
+## License
+MIT License © 2025 Sayli

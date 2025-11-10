@@ -1,0 +1,14 @@
+
+Sensors -> ESP32 -> MQTT Broker -> Node-RED UI + Edge Analytics -> Relay Pump
+
+[Sensor Layer]
+DHT22, Soil Sensor, LDR
+
+[Communication Layer]
+MQTT over WiFi (Mosquitto Broker)
+
+[Cloud Layer]
+Node-RED / Grafana Visualization
+
+[Control Layer]
+Relay automation based on soil moisture

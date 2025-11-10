@@ -1,0 +1,5 @@
+- Built IoT-based Smart Agriculture System using ESP32 and MQTT.
+- Automated irrigation control with Node-RED dashboard.
+- Designed firmware, edge bridge, and analytics components.
+- Achieved simulated 30% water savings through smart irrigation.
+- Deployed locally using Docker and published on GitHub.

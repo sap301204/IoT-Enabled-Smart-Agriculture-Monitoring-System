@@ -1,0 +1,8 @@
+1. Assemble ESP32 + sensors + relay.
+2. Flash firmware using Arduino IDE.
+3. Run Mosquitto MQTT broker locally.
+4. Start Node-RED dashboard.
+5. Observe live sensor data.
+6. Test automatic pump ON/OFF.
+7. Generate and store CSV data.
+8. Analyze trends in Grafana or Python Notebook.

@@ -1,0 +1,11 @@
+Demo Steps:
+1. Show Node-RED dashboard with temperature & humidity charts.
+2. Simulate soil dryness; observe pump turning ON.
+3. Simulate wet soil; pump turns OFF.
+4. View Grafana trend for last 24h.
+
+Screenshots to capture:
+- Node-RED UI
+- Grafana Trends
+- Serial Monitor MQTT Logs
+- Hardware setup

@@ -1,0 +1,201 @@
+[
+  {
+    "id": "1",
+    "type": "tab",
+    "label": "Smart Agriculture Dashboard",
+    "disabled": false,
+    "info": "IoT-Enabled Smart Agriculture Monitoring System Flow"
+  },
+  {
+    "id": "mqtt_in_1",
+    "type": "mqtt in",
+    "z": "1",
+    "name": "Sensor Data Input",
+    "topic": "farm/node1/data",
+    "qos": "2",
+    "datatype": "auto",
+    "broker": "mqtt_broker_local",
+    "x": 160,
+    "y": 120,
+    "wires": [
+      [
+        "json_parse_1"
+      ]
+    ]
+  },
+  {
+    "id": "json_parse_1",
+    "type": "json",
+    "z": "1",
+    "name": "Parse JSON",
+    "property": "payload",
+    "action": "",
+    "pretty": false,
+    "x": 360,
+    "y": 120,
+    "wires": [
+      [
+        "ui_chart_1",
+        "ui_gauge_temp",
+        "ui_gauge_hum",
+        "ui_gauge_soil",
+        "ui_gauge_light"
+      ]
+    ]
+  },
+  {
+    "id": "ui_chart_1",
+    "type": "ui_chart",
+    "z": "1",
+    "name": "Soil Moisture Trend",
+    "group": "dashboard_group_main",
+    "order": 1,
+    "label": "Soil Moisture Trend",
+    "chartType": "line",
+    "xformat": "HH:mm:ss",
+    "interpolate": "linear",
+    "removeOlderUnit": "3600",
+    "colors": [
+      "#00ff00",
+      "#0099cc",
+      "#ff0000"
+    ],
+    "x": 580,
+    "y": 100,
+    "wires": [
+      [],
+      []
+    ]
+  },
+  {
+    "id": "ui_gauge_temp",
+    "type": "ui_gauge",
+    "z": "1",
+    "name": "Temperature",
+    "group": "dashboard_group_main",
+    "order": 2,
+    "title": "Temperature (\u00b0C)",
+    "format": "{{value}}",
+    "min": 0,
+    "max": 50,
+    "colors": [
+      "#00b500",
+      "#e6e600",
+      "#ca3838"
+    ],
+    "x": 580,
+    "y": 180,
+    "wires": []
+  },
+  {
+    "id": "ui_gauge_hum",
+    "type": "ui_gauge",
+    "z": "1",
+    "name": "Humidity",
+    "group": "dashboard_group_main",
+    "order": 3,
+    "title": "Humidity (%)",
+    "format": "{{value}}",
+    "min": 0,
+    "max": 100,
+    "colors": [
+      "#00b500",
+      "#e6e600",
+      "#ca3838"
+    ],
+    "x": 580,
+    "y": 240,
+    "wires": []
+  },
+  {
+    "id": "ui_gauge_soil",
+    "type": "ui_gauge",
+    "z": "1",
+    "name": "Soil Moisture",
+    "group": "dashboard_group_main",
+    "order": 4,
+    "title": "Soil Moisture (ADC)",
+    "format": "{{value}}",
+    "min": 0,
+    "max": 4095,
+    "colors": [
+      "#ff0000",
+      "#ffff00",
+      "#00ff00"
+    ],
+    "x": 600,
+    "y": 300,
+    "wires": []
+  },
+  {
+    "id": "ui_gauge_light",
+    "type": "ui_gauge",
+    "z": "1",
+    "name": "Light Intensity",
+    "group": "dashboard_group_main",
+    "order": 5,
+    "title": "Light Intensity",
+    "format": "{{value}}",
+    "min": 0,
+    "max": 2000,
+    "colors": [
+      "#0000ff",
+      "#00ffff",
+      "#ffff00"
+    ],
+    "x": 600,
+    "y": 360,
+    "wires": []
+  },
+  {
+    "id": "ui_switch_pump",
+    "type": "ui_switch",
+    "z": "1",
+    "name": "Manual Pump Control",
+    "label": "Pump Control",
+    "group": "dashboard_group_main",
+    "order": 6,
+    "topic": "farm/node1/command",
+    "onvalue": "PumpON",
+    "offvalue": "PumpOFF",
+    "x": 360,
+    "y": 480,
+    "wires": [
+      [
+        "mqtt_out_1"
+      ]
+    ]
+  },
+  {
+    "id": "mqtt_out_1",
+    "type": "mqtt out",
+    "z": "1",
+    "name": "Pump Control Output",
+    "topic": "farm/node1/command",
+    "broker": "mqtt_broker_local",
+    "x": 590,
+    "y": 480,
+    "wires": []
+  },
+  {
+    "id": "dashboard_group_main",
+    "type": "ui_group",
+    "name": "Farm Monitoring",
+    "tab": "dashboard_tab_main",
+    "order": 1
+  },
+  {
+    "id": "dashboard_tab_main",
+    "type": "ui_tab",
+    "name": "Smart Farm Dashboard",
+    "icon": "dashboard",
+    "order": 1
+  },
+  {
+    "id": "mqtt_broker_local",
+    "type": "mqtt-broker",
+    "name": "Local MQTT",
+    "broker": "localhost",
+    "port": "1883"
+  }
+]
